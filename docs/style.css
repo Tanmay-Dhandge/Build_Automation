@@ -1,0 +1,29 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,Segoe UI,Arial;background:linear-gradient(135deg,#667eea,#764ba2);color:#333;padding:18px}
+.container{max-width:1100px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.08);margin-bottom:16px}
+h1{color:#667eea}
+.status{display:flex;align-items:center;gap:10px}
+.status-dot{width:12px;height:12px;border-radius:50%;background:#ef4444;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:18px}
+.card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.card h2{color:#667eea;margin-bottom:12px}
+.sensor-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f2f2f2}
+.sensor-row:last-child{border-bottom:none}
+.sensor-label{color:#666}
+.sensor-value{color:#667eea;font-weight:700}
+.control-panel{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.controls{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.control-item{flex:1;min-width:140px;background:#fff;border-radius:10px;padding:12px;text-align:center;border:2px solid #f0f0f0;cursor:pointer;user-select:none}
+.control-icon{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;background:#667eea;color:#fff;font-size:22px}
+.control-item.active{background:#f0fdf4;border-color:#10b981}
+.control-status{color:#666;margin-top:6px}
+.mode-switch{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.switch{position:relative;width:50px;height:26px}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#ccc;border-radius:26px;transition:.25s}
+.slider:before{content:"";position:absolute;left:3px;bottom:3px;height:20px;width:20px;background:#fff;border-radius:50%;transition:.25s}
+input:checked + .slider{background:#10b981}
+input:checked + .slider:before{transform:translateX(24px)}
+#lightStatusText{font-weight:600;transition:color .2s}
